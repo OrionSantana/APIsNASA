@@ -13,6 +13,9 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-input type="date" [formControl]="fecha"></ion-input>
+  <p>{{ fecha.value }}</p>
+
   <ion-content class="ion-padding">
     <ng-container *ngIf ="imageData; else loading">
       <img [src]="imageData.url" alt="NASA image of the Day">

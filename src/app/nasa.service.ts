@@ -12,7 +12,7 @@ export class NasaService {
 
   constructor(private http: HttpClient) { }
 
-  getImageOfTheDay(): Observable<any> {
-    return this.http.get(`${this.apiUrl}?api_key=${this.apiKey}`);
+  getImageOfTheDay(fecha: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}?api_key=${this.apiKey}&date=${fecha}`);
   }
 }
