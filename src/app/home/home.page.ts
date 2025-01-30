@@ -16,9 +16,15 @@ fecha = new FormControl(new Date());
   constructor(private nasaService: NasaService) {}
 
   ngOnInit(){
-    this.nasaService.getImageOfTheDay(this.fecha.value).subscribe((data) => {
+    this.nasaService.getImageOfTheDay().subscribe((data) => {
       this.imageData = data;
       console.log(data);
+    })
+  }
+
+  LoadImage(imageData: any){
+    this.nasaService.getImageByTheDay(this.fecha.value).subscribe((data) => {
+      this.imageData = data;
     })
   }
 
